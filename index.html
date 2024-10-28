@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./css/loading.css">
+     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+    <div class="logo-container">
+        <img src="./assets/logo.png" alt="Logo" class="logo" /> <!-- Add your logo image here -->
+        <h2 class="loading-text">Loading Game...</h2>
+    </div>
+    <div class="loading-container">
+        <div class="loading-bar" id="loadingBar"></div>
+    </div>
+    
+
+    
+    
+</body>
+<script>
+window.onload = function() {
+    const loadingBar = document.getElementById('loadingBar');
+    const increments = [10, 30, 50, 60, 100];
+    let currentIndex = 0;
+
+    function updateLoadingBar() {
+        if (currentIndex < increments.length) {
+            loadingBar.style.width = increments[currentIndex] + '%';
+            currentIndex++;
+            if (increments[currentIndex - 1] === 100) {
+                location.href ="./home.html"
+            }
+            setTimeout(updateLoadingBar, 500);
+            
+        }
+    }
+
+    setTimeout(updateLoadingBar, 100); // 
+};
+</script>
+</html>

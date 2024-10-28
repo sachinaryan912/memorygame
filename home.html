@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory game</title>
+    <link rel="stylesheet" href="./css/home.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="soundIcon" id="soundIcon" onclick="checkMusic()">
+        <i class="fa fas fa-volume-up" class="soundOn"></i>
+        
+    </div>
+
+    <audio id="musicData" src="./assets/fun-comedy-plan-cartoon-orchestral-music-251998.mp3"></audio>
+    <audio id="musicDataMatch" src="./assets/mixkit-arcade-mechanical-bling-210.wav"></audio>
+    <audio id="musicDataFailed" src="./assets/mixkit-video-game-treasure-2066.wav"></audio>
+    <h3 id="totalScore">SCORE: 0</h3>
+    <div class="content">
+        <img src="./assets/logo.png" alt="" srcset="" class="logo">
+        <!-- <h1>Memory game</h1> -->
+        
+        
+        <p style="font-family: 'oxanium';font-weight: bold;">RULE: In the memory game, players take turns flipping over two cards at a time, aiming to find matching pairs.</p>
+
+        <button id="openDialogButton"><i class="fa fa-gamepad"></i> Play Game</button>
+    <!-- <div class="startBox" id="startBox">
+        <input type="number" name="" id="gridTxt" placeholder="Enter grid size...">
+    <button id="createGrid" onclick="generateGrid()"><i class="fa fa-gamepad"></i></button>
+    </div> -->
+    
+    
+    <div class="container" id="container">
+        <!-- <p id="status">Life: <span id="mistakesLeft">0</span></p> -->
+        <div class="progress-container">
+        <div id="progressBar" class="progress-bar">100%</div>
+        </div>
+    </div>
+    <div class="container-data">
+        
+        <div id="gridContainer" class="grid-container"></div>
+    </div>
+
+    <button class="resetBtn" id="resetBtn" onclick="reset()"><i class="fa fa-rotate-right"></i> Reset Game</button>
+    
+    </div>
+
+    <div class="dialog-box" id="dialogBox">
+        <h2>Select Level</h2>
+        <div class="level-section">
+            <label>
+                <input type="radio" name="level" value="easy" checked>
+                <span>Easy</span>
+            </label>
+            <label>
+                <input type="radio" name="level" value="medium">
+                <span>Medium</span>
+            </label>
+            <label>
+                <input type="radio" name="level" value="hard">
+                <span>Hard</span>
+            </label>
+        </div>
+        <h2>Select Card Type</h2>
+        <div class="card-type-section">
+            
+            <label>
+                <input type="radio" name="cardType" value="numbers" checked>
+                <span>🔢 Numbers</span>
+            </label>
+            <label>
+                <input type="radio" name="cardType" value="emoji" >
+                <span>😍 Emoji</span>
+            </label>
+        </div>
+        <button id="playButton">Start Game</button>
+        <div class="closeBtn" id="closeBtn"><i class="fa fa-close"></i></div>
+    </div>
+</body>
+<script src="./js/home.js"></script>
+</html>
