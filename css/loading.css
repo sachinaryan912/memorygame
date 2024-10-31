@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Samurai';
+    src: url('../assets/SpenbebGame-R9q46.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    
+    font-family: "Samurai", sans-serif;
+    background-image: url("../assets/bg-game.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+}
+
+.logo-container {
+    text-align: center; /* Center the logo and text */
+    margin-bottom: 20px; /* Space between logo/text and loading bar */
+}
+
+.logo {
+    width: 15em; /* Adjust logo size as needed */
+    margin-bottom: 10px; /* Space between logo and text */
+}
+
+.loading-text {
+    margin: 10px 0;
+    color: #333;
+    font-size: 3em;
+    font-weight: 800;
+    -webkit-text-stroke: 2px #ffffff;
+   
+}
+
+.loading-container {
+    width: 60%;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 4px;
+    overflow: hidden;
+}
+
+.loading-bar {
+    height: 30px;
+    width: 0;
+    border-radius: 15px;
+    background-color: #76c7c0;
+    transition: width 0.5s ease;
+}
